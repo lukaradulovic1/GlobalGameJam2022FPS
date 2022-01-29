@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 8616685848737228376}
+  - component: {fileID: 4650992809378364570}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -246,6 +247,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  shoot: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -347,6 +349,23 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4650992809378364570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3a293a8ee9bbb46840ba76899fe914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pewPewPrefab: {fileID: 0}
+  damage: 10
+  range: 100
+  inputs: {fileID: 5420857361349278248}
+  fpsCam: {fileID: 0}
 --- !u!1001 &3811307614237462957
 PrefabInstance:
   m_ObjectHideFlags: 0
