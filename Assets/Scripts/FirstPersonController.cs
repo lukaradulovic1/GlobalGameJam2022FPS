@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -98,9 +99,15 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Crouch();
 		}
 
-		private void LateUpdate()
+        private void Crouch()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void LateUpdate()
 		{
 			CameraRotation();
 		}
