@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PewPew : MonoBehaviour
 {
-	public float durationSeconds = 0.05f;
+	public float pewPewPerSecond = 11f;
 
 	private float lifetime;
 
 	// Update is called once per frame
 	private void Update()
 	{
-		lifetime += Time.deltaTime / durationSeconds;
+		lifetime += Time.deltaTime * pewPewPerSecond;
 		if (lifetime >= 1) Destroy(gameObject);
 	}
 }
