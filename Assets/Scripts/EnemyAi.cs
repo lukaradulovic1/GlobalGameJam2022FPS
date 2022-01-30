@@ -82,19 +82,23 @@ public class EnemyAi : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            ///Attack code here
-            if (projectile != null)
-            {
-                Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-                rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-            }
-            ///End of attack code
-
+            Attack();
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
+
+    private void Attack()
+    {
+        if (projectile != null)
+        {
+            var t = transform;
+            var rb = Instantiate(projectile, t.position, t.rotation).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+        }
+    }
+
     private void ResetAttack()
     {
         alreadyAttacked = false;
