@@ -6,7 +6,6 @@ public class Target : MonoBehaviour
 {
     private float health = 100f;
     public MeshRenderer meshRenderer;
-    public Material materialOfDeath;
 
     public bool IsDead { get; private set; }
 
@@ -14,7 +13,7 @@ public class Target : MonoBehaviour
 
     private void Die()
     {
-        meshRenderer.material = materialOfDeath;
+
         IsDead = true;
         GetComponent<MeshDestroy>()?.DestroyMesh();
     }
