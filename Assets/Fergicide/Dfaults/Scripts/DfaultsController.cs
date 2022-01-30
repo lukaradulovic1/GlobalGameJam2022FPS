@@ -37,7 +37,7 @@ namespace Fergicide
 			"_ipLowerUnder"
 		};
 
-		private new Renderer[] renderers;
+		private Renderer[] renderers;
 		private MaterialPropertyBlock mpb;
 		private bool liveEdit;
 		private float dfaultsConfigSeed;
