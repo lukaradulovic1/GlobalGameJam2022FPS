@@ -9,14 +9,14 @@ public class Gun : MonoBehaviour
 	public float range = 100f;
 	public StarterAssetsInputs inputs;
 	public Camera fpsCam;
-	public float secondsBetweenShots = 0.1f;
+	public float shotsPerSecond = 10f;
 
 	private float shotCooldownProgress;
 
 	// Update is called once per frame
 	private void FixedUpdate()
 	{
-		shotCooldownProgress += Time.deltaTime / secondsBetweenShots;
+		shotCooldownProgress += Time.deltaTime * shotsPerSecond;
 		if (inputs.shoot) Shoot();
 	}
 
