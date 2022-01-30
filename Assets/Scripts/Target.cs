@@ -8,12 +8,16 @@ public class Target : MonoBehaviour
     public MeshRenderer meshRenderer;
     public Material materialOfDeath;
 
+    public bool IsDead { get; private set; }
+
 
 
     private void Die()
     {
         meshRenderer.material = materialOfDeath;
+        IsDead = true;
     }
+
     public void TakeDamage(float damage)
     {
         health -= damage;

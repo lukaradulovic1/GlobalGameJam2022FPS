@@ -49,14 +49,9 @@ namespace StarterAssets
 		}
 
 		public void OnShoot(InputValue value)
-        {
+		{
 			ShootInput(value.isPressed);
-        }
-
-        private void ShootInput(bool isPressed)
-        {
-			shoot = isPressed;
-        }
+		}
 #else
 	// old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -80,6 +75,11 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
+		}
+
+		private void ShootInput(bool isPressed)
+		{
+			shoot = isPressed;
 		}
 
 #if !UNITY_IOS || !UNITY_ANDROID
