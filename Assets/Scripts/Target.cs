@@ -16,6 +16,7 @@ public class Target : MonoBehaviour
     {
         meshRenderer.material = materialOfDeath;
         IsDead = true;
+        GetComponent<MeshDestroy>()?.DestroyMesh();
     }
 
     public void TakeDamage(float damage)
