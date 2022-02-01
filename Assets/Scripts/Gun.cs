@@ -11,11 +11,10 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public float shotsPerSecond = 10f;
 
-    private AudioSource shootingSound;
 
     public void Start()
     {
-        shootingSound = GetComponent<AudioSource>();
+
     }
 
     private float shotCooldownProgress;
@@ -35,8 +34,8 @@ public class Gun : MonoBehaviour
         Instantiate(pewPewPrefab, pewPewHolder);
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range))
         {
-            shootingSound.Play();
-
+            // added audio source to the audio manager calling this variable
+            FindObjectOfType<AudioManager>().Play("GunShooting");
             var target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
